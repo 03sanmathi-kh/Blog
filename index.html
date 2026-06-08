@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanmathi's Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="blog-header">
+  <h1>Sanmathi's Blog</h1>
+  <p>Travel · Food · Academic · Technology</p>
+  <div class="underline"></div>
+  <div class="header-stats">
+    <div class="stat"><strong>6</strong>Posts</div>
+    <div class="stat"><strong>4</strong>Categories</div>
+    <div class="stat"><strong>2025-26</strong>Year</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+  <button class="cat-btn active" onclick="filterCards('all', this)">All</button>
+  <button class="cat-btn" onclick="filterCards('travel', this)">Travel</button>
+  <button class="cat-btn" onclick="filterCards('food', this)">Food</button>
+  <button class="cat-btn" onclick="filterCards('academic', this)">Academic</button>
+  <button class="cat-btn" onclick="filterCards('tech', this)">Technology</button>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <input class="search-box" type="text" placeholder="Search posts..." oninput="searchCards(this.value)">
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-grid" id="blogGrid">
+
+  <div class="blog-card" data-cat="travel">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Coorg">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-travel">Travel</span>
+      <h3 class="card-title">Exploring the Coorg Hills</h3>
+      <p class="card-excerpt">A weekend trip to the misty hills of Coorg, Karnataka — coffee plantations, waterfalls, and stunning views that took my breath away.</p>
+      <div class="card-footer">
+        <span class="card-date">March 12, 2026</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-card" data-cat="food">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Food">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-food">Food</span>
+      <h3 class="card-title">Best Street Food in Hubli</h3>
+      <p class="card-excerpt">From spicy mirchi bajji to crispy dosas — a food lover's guide to the best street food spots around Hubli city.</p>
+      <div class="card-footer">
+        <span class="card-date">February 28, 2026</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-card" data-cat="academic">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80" alt="Study">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-academic">Academic</span>
+      <h3 class="card-title">How I Learned HTML & CSS in 30 Days</h3>
+      <p class="card-excerpt">My personal journey of learning web development from scratch — the resources I used, mistakes I made, and lessons I learned along the way.</p>
+      <div class="card-footer">
+        <span class="card-date">January 15, 2026</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-card" data-cat="tech">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80" alt="Technology">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-tech">Technology</span>
+      <h3 class="card-title">Why Every Student Should Learn Git</h3>
+      <p class="card-excerpt">Version control is not just for professionals. Here is why Git and GitHub are essential tools for every computer science student.</p>
+      <div class="card-footer">
+        <span class="card-date">January 5, 2026</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-card" data-cat="travel">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80" alt="Hampi">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-travel">Travel</span>
+      <h3 class="card-title">A Day Trip to Hampi</h3>
+      <p class="card-excerpt">Ancient ruins, boulder-strewn landscapes, and a rich history — Hampi is one of Karnataka's most magical destinations worth visiting.</p>
+      <div class="card-footer">
+        <span class="card-date">December 20, 2025</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-card" data-cat="food">
+    <div class="card-image-wrap">
+      <img class="card-image" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Cooking">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-body">
+      <span class="card-tag tag-food">Food</span>
+      <h3 class="card-title">My Favourite Home Cooked Recipes</h3>
+      <p class="card-excerpt">There is nothing like home food. Here are three simple and delicious recipes that I love making on lazy weekends at home.</p>
+      <div class="card-footer">
+        <span class="card-date">December 10, 2025</span>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults">No posts found!</div>
+
+</div>
+
+<div class="footnote">
+  Sanmathi Hegde &nbsp;|&nbsp; 01fe24bcs269@kletech.ac.in
+</div>
+
+<script>
+function filterCards(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.blog-card');
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function searchCards(query) {
+  const cards = document.querySelectorAll('.blog-card');
+  let found = 0;
+  cards.forEach(card => {
+    const title = card.querySelector('.card-title').textContent.toLowerCase();
+    const excerpt = card.querySelector('.card-excerpt').textContent.toLowerCase();
+    if (title.includes(query.toLowerCase()) || excerpt.includes(query.toLowerCase())) {
+      card.style.display = 'block';
+      found++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.getElementById('noResults').style.display = found === 0 ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
